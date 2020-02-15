@@ -3,7 +3,7 @@ import json
 import os
 
 def db_connect():
-    connect(os.getenv('DBKEY'))
+    connect('FoodUp',username = os.getenv('DB_USER'),password = os.getenv('DB_PASS'),host = os.getenv('DBHOST'))
 
 
 def dbget():
