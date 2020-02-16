@@ -14,7 +14,7 @@ def db():
 
 @app.route('/random', methods = ['GET'])
 def random():
-    return jsonify(results - src.randomizer())
+    return jsonify(results = src.randomizer())
 
 @app.route('/delete', methods = ['GET'])
 def deldb():
