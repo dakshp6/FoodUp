@@ -10,4 +10,4 @@ def randomizer():
 
     list = json.dumps(dbget())
 
-    return list
+    return str(type(list))
