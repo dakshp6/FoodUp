@@ -1,6 +1,6 @@
 import random
 from .DB import *
-
+import json
 
 def randomizer():
 
@@ -8,6 +8,6 @@ def randomizer():
 
     db_connect()
 
-    list = dbget()
+    list = json.dumps(dbget())
 
-    return list[x]
+    return str(type(list[x]))
