@@ -4,10 +4,13 @@ import json
 
 def randomizer():
 
-    x = random.randint(1,21)
-
     db_connect()
 
     list = dbget()
 
-    return list[x]
+    x = random.randint(1,len(list)+1)
+
+    if(len(list)==0):
+        return "List is empty, use filldb"
+    else:
+        return list[x]
