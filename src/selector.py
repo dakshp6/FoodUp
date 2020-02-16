@@ -8,7 +8,7 @@ def randomizer():
 
     list = dbget()
 
-    x = random.randint(1,len(list)+1)
+    x = random.randint(1,len(list))
 
     if(len(list)==0):
         return "List is empty, use filldb"
