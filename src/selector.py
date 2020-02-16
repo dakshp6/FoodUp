@@ -8,6 +8,6 @@ def randomizer():
 
     db_connect()
 
-    list = json.dumps(dbget())
+    list = dbget()
 
-    return type(list)
+    return list[x]
