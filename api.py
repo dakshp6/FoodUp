@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Welcome to the API!<br/>The GET methods offered are:<ul><li>/db - access database info</li><li>/random - returns random restaurant</li><li>/delete - delete the database objects</li></ul>The POST methods offered are: <ul><li> /filldb - fills database with local restaurants with a radius (meters) parameter</li></ul>"
+    return "Welcome to the API!<br/>The GET methods offered are:<ul><li>/db - access database info</li><li>/random - returns random restaurant</li><li>/delete - delete the database objects</li></ul>The POST methods offered are: <ul><li> /filldb - fills database with local restaurants with latitude, longitude, and radius (meters) parameters</li></ul>"
 
 @app.route('/db', methods = ['GET'])
 def db():
