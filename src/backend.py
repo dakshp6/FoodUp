@@ -1,33 +1,6 @@
 import requests
-import json
 from .DB import *
 import os
-
-def getlat():
-
-    locres = requests.post("https://www.googleapis.com/geolocation/v1/geolocate?key="+os.getenv('KEY'))
-
-    locjs = locres.json()
-
-    loc = locjs['location']
-
-    lat = loc['lat']
-
-    return lat
-
-
-def getlng():
-
-    locres = requests.post("https://www.googleapis.com/geolocation/v1/geolocate?key="+os.getenv('KEY'))
-
-    locjs = locres.json()
-
-    loc = locjs['location']
-
-    lng = loc['lng']
-
-    return lng
-
 
 def getrest(lat,lng,rad):
     try:

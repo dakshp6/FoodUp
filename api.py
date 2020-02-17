@@ -27,8 +27,8 @@ def filldb():
     src.db_connect()
     src.dbdel()
     rad = request.args['radius']
-    lat = src.getlat()
-    lng = src.getlng()
+    lat = request.args['lat']
+    lng = request.args['lng']
     src.getrest(lat,lng,rad)
     return "ok", 200
 
