@@ -39,8 +39,25 @@ function geoError() {
 
 
 function SendPar(lat,long){
-  
-var http = new XMLHttpRequest();
+    alert(lat+ " hi "+long);
+const options = {
+    method: 'POST' ,
+    headers: {
+    'Content-Type': 'application/json'
+    }
+    
+};
+fetch('https://foodup-ugahacks.herokuapp.com/filldb?radius=15000&lat='+ lat.toString() + "&lng="+ long.toString(), options);
+ 
+
+
+
+
+
+
+
+
+/* var http = new XMLHttpRequest();
 var url = 'https://foodup-ugahacks.herokuapp.com/filldb?raduis=15000&lat='+ lat.toString() + "&lng="+ long.toString();
 
 
@@ -58,7 +75,7 @@ fetch('https://foodup-ugahacks.herokuapp.com/random').then(function (response) {
 	// There was an error
 	alert('Something went wrong.', err);
 });
-
+ */
 }
 
 
