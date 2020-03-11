@@ -1,0 +1,46 @@
+
+.heading{
+    font-size: 60pt;
+    text-align: center;
+    color: #A5419B;
+}
+
+
+
+.button
+{
+    margin-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+ 
+.btn 
+{
+    border: 1px solid white;
+    padding: 10px 30px;
+    color:black;
+    text-decoration: double;
+    text-transform: uppercase;
+    border-radius: 25px;
+    background-color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-one:hover
+{
+    background-color: lightcyan;
+    transition: all 0.5s ease-in;
+}
+
+.par
+{
+    position: absolute;
+    left: 20%;
+    top: 45%px;
+    right: 20%;
+    
+    text-align: center;
+}

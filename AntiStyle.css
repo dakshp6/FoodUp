@@ -1,0 +1,8 @@
+
+.back2
+{
+    background-image:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)) ,url(dark.jpeg); 
+    background-size: cover;
+    color: white;
+    font-family: 'Lobster', cursive;
+}
