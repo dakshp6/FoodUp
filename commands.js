@@ -1,13 +1,11 @@
 window.onload = function(){
     document.getElementById("button").addEventListener("click",random);
-
-    
+    getLocation();
 }
 
 function random(){
-    document.getElementById("par1").innerHTML="Hello";
-getLocation();
-
+var ran =fetch('https://foodup-ugahacks.herokuapp.com/random');
+    document.getElementById("par1").innerHTML= ran;
 }
 
 
@@ -26,8 +24,9 @@ navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
 function geoSuccess(position) {
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
-    SendPar(lat,lng);
     alert("lat:" + lat + " lng:" + lng);
+    codeLatLng(lat, lng);
+    SendPar(lat,lng);
 }
 
 
@@ -40,42 +39,12 @@ function geoError() {
 
 function SendPar(lat,long){
     alert(lat+ " hi "+long);
-const options = {
-    method: 'POST' ,
-    headers: {
-    'Content-Type': 'application/json'
-    }
-    
-};
-fetch('https://foodup-ugahacks.herokuapp.com/filldb?radius=15000&lat='+ lat.toString() + "&lng="+ long.toString(), options);
- 
 
+    var xhr = new XMLHttpRequest();
 
+    xhr.open('POST', 'https://foodup-ugahacks.herokuapp.com/filldb?radius=15000&lat='+lat.toString()+'&lng='+long.toString());
 
+    xhr.send();
 
-
-
-
-
-/* var http = new XMLHttpRequest();
-var url = 'https://foodup-ugahacks.herokuapp.com/filldb?raduis=15000&lat='+ lat.toString() + "&lng="+ long.toString();
-
-
-
-
-
-http.open('POST', url, true);
-
-http.send();
-
-fetch('https://foodup-ugahacks.herokuapp.com/random').then(function (response) {
-	// The API call was successful!
-	alert('success!', response);
-}).catch(function (err) {
-	// There was an error
-	alert('Something went wrong.', err);
-});
- */
 }
-
 
