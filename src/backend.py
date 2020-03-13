@@ -43,15 +43,12 @@ def getrest(lat,lng,rad):
         try:
             geo = restaurant['geometry']
             loc = geo['location']
-            lat = loc['lat']
-            lng = loc['lng']
 
         except KeyError:
-            lat = 0.0
-            lng = 0.0
+            loc = None
 
         try:
             db_connect()
-            Post(name = names, address = addresses, priceRange = priceRanges, rating = ratings, openNow = isOpen, lat = lat, lng = lng).save()
+            Post(name = names, address = addresses, priceRange = priceRanges, rating = ratings, openNow = isOpen, location = loc).save()
         except:
             print("Database Error")
