@@ -1,6 +1,25 @@
 window.onload = function(){
     document.getElementById("button").addEventListener("click",random);
     getLocation();
+    getData();
+}
+
+async function getData(){
+const response = await fetch ('https://foodup-ugahacks.herokuapp.com/random');
+const data = await response.json();
+alert(data);
+
+for (item of data){
+    alert(hi);
+    const root= document.createElement('div');
+    const mood = document.createElement('div');
+    mood.textContent= `radius: ${item.radius}`;
+    const geo = document.createElement('div');
+   
+    geo.textContent = `${item.lat} °,${item.lon} °`
+    root.append(mood,geo);
+    document.body.append(root);
+ }
 }
 
 function random(){
