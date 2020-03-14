@@ -39,16 +39,16 @@ def getrest(lat,lng,rad):
             isOpen = open['open_now']
         except KeyError:
             isOpen = False
-
+"""
         try:
             geo = restaurant['geometry']
             loc = geo['location']
 
         except KeyError:
             loc = {"lat":0.00,"lng":0.00}
-
+"""
         try:
             db_connect()
-            Post(name = names, address = addresses, priceRange = priceRanges, rating = ratings, openNow = isOpen, location = geopoint).save()
+            Post(name = names, address = addresses, priceRange = priceRanges, rating = ratings, openNow = isOpen).save()
         except:
             print("Database Error")
