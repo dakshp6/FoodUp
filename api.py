@@ -1,8 +1,6 @@
 from flask import Flask, request, jsonify
-import importlib
 import src
 
-importlib.reload(src)
 
 app = Flask(__name__)
 
