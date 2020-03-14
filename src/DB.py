@@ -31,5 +31,5 @@ class Post(Document):
     priceRange = IntField(required=True)
     rating = DecimalField(required=True)
     openNow = BooleanField(required=True)
-    location = GeoPointField(required=True)
+    location = DictField(required=True)
     meta = {'collection': os.getenv('COLLECTION_NAME')}
