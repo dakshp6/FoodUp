@@ -40,9 +40,9 @@ def getrest(lat,lng,rad):
         except KeyError:
             isOpen = False
 
-        try:
-            geo = restaurant['geometry']
-            loc = geo['location']
+
+        geo = restaurant['geometry']
+        loc = geo['location']
 
         try:
             db_connect()
