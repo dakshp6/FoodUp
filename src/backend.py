@@ -46,10 +46,10 @@ def getrest(lat,lng,rad):
             lat = loc['lat']
             lng = loc['lng']
 
-            geopoint = {'lng' : lng, 'lat' : lat}
+            geopoint = [lng, lat]
 
         except KeyError:
-            geopoint = {'lng' : 0.00, 'lat' : 0.00}
+            geopoint = [0.00, 0.00]
 
         try:
             db_connect()
