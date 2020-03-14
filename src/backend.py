@@ -49,6 +49,6 @@ def getrest(lat,lng,rad):
 
         try:
             db_connect()
-            Post(name = names, address = addresses, priceRange = priceRanges, rating = ratings, openNow = isOpen, location = loc).save()
+            Post(name = names, address = addresses, priceRange = priceRanges, rating = ratings, openNow = isOpen).save()
         except:
             print("Database Error")
